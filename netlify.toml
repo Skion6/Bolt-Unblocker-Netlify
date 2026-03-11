@@ -1,10 +1,11 @@
-# netlify.toml for Bolt Unblocker
+# netlify.toml for Bolt Unblocker (works with Vite/CRA SPAs)
 
 [build]
-  # Use pnpm to install dependencies and run the build
+  # Use pnpm to install dependencies and build
   command = "pnpm install && pnpm run build"
+  # Default output folder (Vite: dist, CRA: build)
   publish = "dist"
-  # Pin Node version to 20 for compatibility
+  # Pin Node version for compatibility
   environment = { NODE_VERSION = "20" }
 
 # Redirect all SPA routes to index.html to avoid 404s
