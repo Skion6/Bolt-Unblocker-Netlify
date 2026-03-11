@@ -1,7 +1,13 @@
-[build]
-  command = "npm install --legacy-peer-deps && npm run build"
-  publish = "dist"
+# netlify.toml for Bolt Unblocker
 
+[build]
+  # Use pnpm to install dependencies and run the build
+  command = "pnpm install && pnpm run build"
+  publish = "dist"
+  # Pin Node version to 20 for compatibility
+  environment = { NODE_VERSION = "20" }
+
+# Redirect all SPA routes to index.html to avoid 404s
 [[redirects]]
   from = "/*"
   to = "/index.html"
