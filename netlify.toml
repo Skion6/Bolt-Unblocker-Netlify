@@ -1,0 +1,13 @@
+# netlify.toml for Bolt Unblocker
+
+[build]
+  # Install dependencies and run the build script
+  command = "pnpm install && pnpm run build"
+  # Folder to deploy
+  publish = "dist"
+
+# Redirect all routes to index.html for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
